@@ -1,0 +1,7 @@
+/enonces/
+
+# Terraform (state local)
+infra/terraform/.terraform/
+infra/terraform/*.tfstate
+infra/terraform/*.tfstate.*
+infra/terraform/tfplan

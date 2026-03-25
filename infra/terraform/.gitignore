@@ -4,4 +4,7 @@
 *.tfstate.*
 crash.log
 tfplan
+
+# Secrets locaux (à ne jamais commiter)
+**/*.auto.tfvars
 README.md
