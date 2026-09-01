@@ -1,0 +1,17 @@
+---
+- name: Créer le répertoire d'application
+  file:
+    path: /opt/app
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Déployer une config applicative exemple
+  copy:
+    content: |
+      APP_ENV={{ app_env | default('production') }}
+      APP_LOG_LEVEL=info
+      APP_PORT=3000
+    dest: /opt/app/.env
+    mode: "0600"

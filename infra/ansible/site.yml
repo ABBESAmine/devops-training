@@ -1,0 +1,15 @@
+---
+- name: Configuration commune
+  hosts: all
+  roles:
+    - base
+
+- name: Serveurs web
+  hosts: webservers
+  roles:
+    - nginx
+
+- name: Serveurs d'application
+  hosts: appservers
+  roles:
+    - app

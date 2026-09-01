@@ -1,0 +1,32 @@
+services:
+  node1:
+    image: ubuntu:22.04
+    container_name: ansible-node1
+    command:
+      - /bin/bash
+      - -lc
+      - |
+        set -euo pipefail
+        apt-get update
+        DEBIAN_FRONTEND=noninteractive apt-get install -y python3 ca-certificates
+        exec sleep infinity
+    networks:
+      - ansible-net
+
+  node2:
+    image: ubuntu:22.04
+    container_name: ansible-node2
+    command:
+      - /bin/bash
+      - -lc
+      - |
+        set -euo pipefail
+        apt-get update
+        DEBIAN_FRONTEND=noninteractive apt-get install -y python3 ca-certificates
+        exec sleep infinity
+    networks:
+      - ansible-net
+
+networks:
+  ansible-net:
+    name: ansible-net

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head><title>DevOps Training</title></head>
+  <body>
+    <h1>Serveur configuré par Ansible</h1>
+    <p>Host: {{ ansible_hostname }}</p>
+    <p>Env: {{ group_names | join(",") }}</p>
+  </body>
+</html>
